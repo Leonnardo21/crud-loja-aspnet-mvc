@@ -68,3 +68,4 @@ C:\Users\leoso\source\repos\CadastroClientes\obj\Debug\CadastroClientes.csproj.C
 C:\Users\leoso\source\repos\CadastroClientes\obj\Debug\CadastroClientes.csproj.CopyComplete
 C:\Users\leoso\source\repos\CadastroClientes\obj\Debug\CadastroClientes.dll
 C:\Users\leoso\source\repos\CadastroClientes\obj\Debug\CadastroClientes.pdb
+C:\Users\leoso\source\repos\CadastroClientes\obj\Debug\CadastroClientes.csprojAssemblyReference.cache
