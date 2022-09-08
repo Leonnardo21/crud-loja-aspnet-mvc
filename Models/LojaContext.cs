@@ -8,7 +8,9 @@ namespace CadastroClientes.Models
 {
     public class LojaContext : DbContext
     {
-        public LojaContext() : base("DbLoja") { }
+        public LojaContext() : base("DbLoja") {
+            Database.Log = instrucao => System.Diagnostics.Debug.WriteLine(instrucao);
+        }
 
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Consultor> Consultores { get; set; }
