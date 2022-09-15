@@ -32,5 +32,12 @@
         e.preventDefault();
 
         $(this).parent().parent().remove();
+        qtdPhones--;
+
+        $("#div-phones .row").each(function (indice, elemento) {
+            $(elemento).find(".txt-ddd").attr("name", "Telefones[" + indice + "].DDD");
+            $(elemento).find(".txt-numero").attr("name", "Telefones[" + indice + "].Numero");
+            $(elemento).find(".sel-tipo").attr("name", "Telefones[" + indice + "].Tipo");
+        });
     });
 });
