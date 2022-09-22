@@ -78,10 +78,17 @@ namespace CadastroClientes.Controllers
         // POST: Clientes/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Email,IdConsultor")] Cliente cliente)
+        public ActionResult Edit([Bind(Include = "Id,Nome,Email,IdConsultor,Telefones")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
+                foreach(var phone in cliente.Telefones)
+                {
+                    if (phone.Id > 0)
+                        db.Entry(phone).State = EntityState.Modified;
+                    else
+                        db.Entry(phone).State = EntityState.Added;
+                }
                 db.Entry(cliente).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -111,6 +118,7 @@ namespace CadastroClientes.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Cliente cliente = db.Clientes.Find(id);
+            db.Telefones.RemoveRange(cliente.Telefones);
             db.Clientes.Remove(cliente);
             db.SaveChanges();
             return RedirectToAction("Index");
