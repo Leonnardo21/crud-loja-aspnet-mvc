@@ -1,16 +1,16 @@
 ﻿$(function () {
-    var qtdPhones = 0;
+    var qtdPhones = $("#div-phones .row").length;
     $("#btn-add-phone").click(function (e) {
         e.preventDefault();
         var blocoTelefone = '<div class="row">' +
             '    <div class="col-md-2">' +
-            '        <input class="form-control txt-ddd" type="number" name="Telefones[' + qtdPhones + '].DDD" maxlength = "2" placeholder = "DDD"/> ' +
+            '        <input type="number" name="Telefones[' + qtdPhones + '].DDD" maxlength = "2" placeholder = "DDD" class="form-control txt-ddd" /> ' +
             '    </div>' +
             '    <div class="col-md-6">' +
-            '        <input class="form-control txt-numero" type="text" name="Telefones[' + qtdPhones + '].Numero" placeholder = "Numero"/> ' +
+            '        <input type="text" name="Telefones[' + qtdPhones + '].Numero" placeholder = "Numero" class="form-control txt-numero" /> ' +
             '    </div>' +
             '    <div class="col-md-3">' +
-            '        <select class="form-control sel-tipo" name="Telefones[' + qtdPhones + '].Tipo" > ' +
+            '        <select name="Telefones[' + qtdPhones + '].Tipo" class="form-control sel-tipo" > ' +
             '            <option value="0">Residencial</option>' +
             '            <option value="1">Comercial</option>' +
             '            <option value="2">Celular</option>' +

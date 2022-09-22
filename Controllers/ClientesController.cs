@@ -28,7 +28,7 @@ namespace CadastroClientes.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Cliente cliente = db.Clientes.Find(id);
+            Cliente cliente = db.Clientes.Include(c => c.Consultor).Include(c => c.Telefones).FirstOrDefault(c => c.Id == id);
             if (cliente == null)
             {
                 return HttpNotFound();
