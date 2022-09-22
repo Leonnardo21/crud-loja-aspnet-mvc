@@ -116,6 +116,14 @@ namespace CadastroClientes.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public void RemovePhone(int id)
+        {
+            var phone = db.Telefones.Find(id);
+            db.Entry(phone).State = EntityState.Deleted;
+            db.SaveChanges();
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -31,6 +31,11 @@
     $("#div-phones").on("click", ".btn-remove-phones", function (e) {
         e.preventDefault();
 
+        var id = $(this).attr("data-id");
+
+        if (id)
+            $.post("/Clientes/RemovePhone?id=" + id);
+
         $(this).parent().parent().remove();
         qtdPhones--;
 
